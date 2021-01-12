@@ -1,0 +1,73 @@
+---
+title: "ML assignment 1"
+author: "Ronae McLin rkm2147"
+date: "1/12/2021"
+output: github_document
+---
+
+```{r}
+library(tidyverse)
+library(haven)
+library(table1)
+```
+
+read in the file
+```{r}
+data_df = read_csv("data.csv")
+```
+
+clean data
+```{r}
+data_df = data_df %>% janitor::clean_names()
+```
+
+1. Construct a table providing summaries of the quantitative features of the dataset.Summaries should include the mean, median, minimum value, and maximum value. If you are unable to construct a formatted table within R, you can print raw output, but then comment the output to identify the answer that was requested.
+ 
+ **classification variable was not included in this table**
+ #no missing data or values to omit
+ 
+```{r}
+table_data = 
+table1(~ age + bmi + glucose + insulin + homa + leptin + adiponectin + resistin + mcp_1, data = data_df)
+```
+ 
+```{r}
+table_data
+```
+
+2. Recode BMI into the WHO-defined categories below
+Severely underweight - BMI less than 16.5kg/m^2
+Underweight - BMI under 18.5 kg/m^2
+Normal weight - BMI greater than or equal to 18.5 to 24.9 kg/m^2
+Overweight – BMI greater than or equal to 25 to 29.9 kg/m^2
+Obesity class I – BMI 30 to 34.9 kg/m^2
+Obesity class II – BMI 35 to 39.9 kg/m^2
+Obesity class III – BMI greater than or equal to 40 kg/m^2
+ 
+```{r}
+
+```
+ 
+3.Create a bar chart showing the proportion of breast cancer cases and controls within each BMI category
+
+```{r}
+
+```
+
+ 
+4. Construct a logistic regression model using breast cancer classification as the outcome and glucose, HOMA, leptin, BMI (continuous) and age as the independent variables. Fill in the beta estimate and 95% confidence interval associated with a 1-unit change in HOMA
+
+```{r}
+
+```
+
+ 
+5.Construct a linear regression model using insulin as the outcome and BMI
+(continuous), age, and glucose as the independent variables.
+Fill in the beta estimate and 95% confidence interval associated with a 1-unit change in age.
+
+
+```{r}
+
+```
+
